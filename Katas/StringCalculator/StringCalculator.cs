@@ -9,7 +9,7 @@ namespace Katas.StringCalculator
 
 		public StringCalculator()
 		{
-			defaultSeparaters = new string[]
+			defaultSeparaters = new[]
 			{
 				Environment.NewLine,
 				",",
@@ -22,25 +22,20 @@ namespace Katas.StringCalculator
 			if (string.IsNullOrWhiteSpace(numbers))
 				return 0;
 
-			if (numbers.Split('\n')[0].StartsWith(@"//")) {
-
+			if (numbers.Split('\n')[0].StartsWith(@"//"))
+			{
 			}
 
 			return Calculate(numbers, defaultSeparaters);
 		}
-
-
-
-
-
-
 
 		private int ParsInt(string number)
 		{
 			return int.Parse(number);
 		}
 
-		private int Calculate(string numbers, string[] separaters) {
+		private int Calculate(string numbers, string[] separaters)
+		{
 			if (string.IsNullOrWhiteSpace(numbers))
 				return 0;
 
