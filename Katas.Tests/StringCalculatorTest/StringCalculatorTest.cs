@@ -58,7 +58,7 @@ namespace Katas.Tests.StringCalculatorTest
 		[Test]
 		public void ZeroParam()
 		{
-			Assert.AreEqual(m_calc.Add(""), 0);
+			Assert.AreEqual(m_calc.Add(string.Empty), 0);
 		}
 	}
 }
