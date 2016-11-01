@@ -19,15 +19,19 @@ namespace Katas.StringCalculator
 
 		public int Add(string numbers)
 		{
-			if (!numbers.Split('\n')[0].StartsWith(@"//")) {
-				return Calculate(numbers, m_defaultSeparaters);
+			string[] customerSeparaters;
+
+			if (!numbers.Split('\n')[0].StartsWith(@"//"))
+			{
+				customerSeparaters = m_defaultSeparaters;
 			}
 			else
 			{
-				var customerSeparaters = numbers.Split('\n')[0].Replace(@"//", string.Empty);
+				customerSeparaters = new[] { numbers.Split('\n')[0].Replace(@"//", string.Empty) };
+				numbers = numbers.Split('\n')[1];
 			}
 
-			return Calculate(numbers, m_defaultSeparaters);
+			return Calculate(numbers, customerSeparaters);
 		}
 
 		private int ParsInt(string number)
