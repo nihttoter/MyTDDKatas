@@ -20,7 +20,7 @@ namespace Katas.StringCalculator
 		public int Add(string numbers)
 		{
 			if (!numbers.Split('\n')[0].StartsWith(@"//")) {
-				return Calculate(numbers, defaultSeparaters);
+				return Calculate(numbers, m_defaultSeparaters);
 			}
 			else
 			{
