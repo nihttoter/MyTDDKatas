@@ -19,11 +19,12 @@ namespace Katas.StringCalculator
 
 		public int Add(string numbers)
 		{
-			if (string.IsNullOrWhiteSpace(numbers))
-				return 0;
-
-			if (numbers.Split('\n')[0].StartsWith(@"//")) {
-
+			if (!numbers.Split('\n')[0].StartsWith(@"//")) {
+				return Calculate(numbers, defaultSeparaters);
+			}
+			else
+			{
+				var customerSeparaters = numbers.Split('\n')[0].Replace(@"//", string.Empty);
 			}
 
 			return Calculate(numbers, defaultSeparaters);
