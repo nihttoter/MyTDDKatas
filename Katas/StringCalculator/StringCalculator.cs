@@ -5,11 +5,11 @@ namespace Katas.StringCalculator
 {
 	public class StringCalculator
 	{
-		private readonly string[] defaultSeparaters;
+		private readonly string[] m_defaultSeparaters;
 
 		public StringCalculator()
 		{
-			defaultSeparaters = new string[]
+			m_defaultSeparaters = new[]
 			{
 				Environment.NewLine,
 				",",
@@ -27,21 +27,16 @@ namespace Katas.StringCalculator
 				var customerSeparaters = numbers.Split('\n')[0].Replace(@"//", string.Empty);
 			}
 
-			return Calculate(numbers, defaultSeparaters);
+			return Calculate(numbers, m_defaultSeparaters);
 		}
-
-
-
-
-
-
 
 		private int ParsInt(string number)
 		{
 			return int.Parse(number);
 		}
 
-		private int Calculate(string numbers, string[] separaters) {
+		private int Calculate(string numbers, string[] separaters)
+		{
 			if (string.IsNullOrWhiteSpace(numbers))
 				return 0;
 
